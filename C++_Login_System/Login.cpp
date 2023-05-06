@@ -27,7 +27,7 @@ void Login::login(string username, string password) {
 }
 	
 void Login::registration(string username, string password) {
-	ofstream file("login.txt");
+	ofstream file("login.txt", ios_base::app);
 	file << username << endl << password;
 	file.close();
 }
@@ -39,12 +39,14 @@ void Login::welcome() {
 	cin >> num; 
 
 	if (num == 1) {
+		system("cls"); 
 		cout << "Please enter your username: \n"; cin >> username; 
 		cout << "Please enter your password: \n"; cin >> password; 
 		Login l; 
 		l.login(username, password);
 	}
 	else if (num == 2) {
+		system("cls");
 		cout << "Please enter your username: \n"; cin >> username;
 		cout << "Please enter your password: \n"; cin >> password;
 		Login l;
