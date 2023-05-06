@@ -13,8 +13,9 @@ void Login::login(string username, string password) {
 	getline(read, un); 
 	getline(read, pw); 
 
+	
 	if (un == username && pw == password) {
-		cout << "Successfully logged in...Welcome " + username + "!\n";
+		cout << "Successfully logged in...Welcome " + username + "!\n"; 
 	}
 	else {
 		cout << "Login information invalid!\n";
@@ -24,6 +25,7 @@ void Login::login(string username, string password) {
 		l.welcome();
 	}
 }
+	
 void Login::registration(string username, string password) {
 	ofstream file("login.txt");
 	file << username << endl << password;
@@ -41,9 +43,6 @@ void Login::welcome() {
 		cout << "Please enter your password: \n"; cin >> password; 
 		Login l; 
 		l.login(username, password);
-		Sleep(1000);
-		system("cls");
-		l.welcome();
 	}
 	else if (num == 2) {
 		cout << "Please enter your username: \n"; cin >> username;
